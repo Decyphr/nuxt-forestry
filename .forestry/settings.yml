@@ -6,10 +6,6 @@ webhook_url:
 sections:
 - type: heading
   label: General
-- type: document
-  path: content/data/config.json
-  label: Site Information
-  match: "**/*"
 - type: heading
   label: Content
 - type: document
