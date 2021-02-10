@@ -1,0 +1,75 @@
+ul.social-icons {
+  text-align: center;
+  margin: 20px 0 0;
+  display: inline-block;
+
+  li {
+    display: inline-block;
+    padding: 0px;
+    @include responsive-font(24px, 24px);
+    margin: 0 10px 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+    
+
+    a {
+      background: $md-secondary-color;
+      color: $white;
+      width: 25px;
+      height: 25px;
+      display: block;
+      border-radius: 50%;
+      font-size: 14px;
+      padding-top: 4px;
+
+      &.facebook {
+        background: #4e71a8;
+
+        &:hover,
+        &:focus {
+          background: darken(#4e71a8, 10%);
+        }
+      }
+
+      &.twitter {
+        background: #1cb7eb;
+
+        &:hover,
+        &:focus {
+          background: darken(#1cb7eb, 10%);
+        }
+      }
+
+      &.linkedin {
+        background: #1686b0;
+
+        &:hover,
+        &:focus {
+          background: darken(#1686b0, 10%);
+        }
+      }
+
+      &.youtube {
+        background: #e34120;
+
+        &:hover,
+        &:focus {
+          background: darken(#e34120, 10%);
+        }
+      }
+
+      &.googleplus {
+        background: #e34120;
+
+        &:hover,
+        &:focus {
+          background: darken(#e34120, 10%);
+        }
+      }
+    }
+
+    
+  }
+}

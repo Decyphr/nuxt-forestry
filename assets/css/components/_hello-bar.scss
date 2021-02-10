@@ -1,0 +1,15 @@
+.hello-bar {
+  background: $md-primary-color;
+  color: $white;
+  padding: 5px 0;
+  text-align: center;
+
+  p {
+    margin: 5px 0;
+  }
+
+  a {
+    text-decoration: underline;
+    color: $white;
+  }
+}

@@ -1,0 +1,365 @@
+.page-header {
+  /*
+   * In general, avoid styling this element. It serves as a wrapper for
+   * .page-header-* components to show/hide them based on the browser width and
+   * to absolutely or fixed(ly?) position them
+   *
+   * This allows us to render the .page-header-* components directly regardless
+   * of the width of the viewport simply by taking them out of the .page-header
+   * element. Useful for the styleguide. Don't hate me. Blame the red-head.
+   */
+   z-index: 1000;
+   position: absolute;
+   width: 100%;
+   transform: none !important;
+
+   &.headroom--not-top {
+     position: fixed;
+   }
+
+  /* Default, mobile-first page header setup */
+  .page-header-full {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  .page-header-compact {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    &.open {
+      position: fixed;
+    }
+  }
+
+  /* Hide .page-header-* components according to the width of viewport */
+  @include mq($from: medium) {
+    .page-header-full {
+      display: block;
+    }
+    .page-header-compact {
+      display: none;
+    }
+  }
+}
+
+/*
+ * Full desktop version of the header. All the bells and whistles.
+ */
+.page-header-full {
+  background-color: $white;
+  height: 156px;
+  padding: 25px;
+  position: relative;
+  //overflow: hidden;
+
+  .page-header-full-container {
+    max-width: $max-width;
+    margin: 0 auto;
+    position: relative;
+    padding-left: $large-container-padding;
+    padding-right: $large-container-padding;
+    height: 100%;
+  }
+
+  .logo {
+    display: inline-block;
+    margin-bottom: 0px;
+    height: 105px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+
+  /* Header Nav Primary */
+  .header-nav-primary {
+    position: relative;
+
+    > ul {
+      @include responsive-font(20px, 20px);
+      @extend %clearfix;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 0 0 0 20px;
+      background: $md-primary-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        right: 0;
+        width: 50%;
+        width: 20vw;
+        height: 60px;
+        background: $md-primary-color;
+      }
+
+      > li {
+        line-height: 60px;
+        display: block;
+        float: left;
+        position: relative;
+        margin: 0 10px 0 0;
+        height: 60px;
+        padding: 0;
+
+        &:last-child {
+          margin-right: 0;
+
+          a {
+            padding-right: 0;
+          }
+
+          ul {
+            right: 0;
+          }
+        }
+
+        &:hover, 
+        &:focus, 
+        &.active {
+          > a {
+            text-decoration: none;
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              right: auto;
+              width: 0;
+              height: 0;
+              text-align: center;
+              border-style: solid;
+              border-width: 10px 9.5px 0 9.5px;
+              border-color: $white transparent transparent transparent;
+            }
+          }
+
+          > ul {
+            display: block;
+          }
+        }
+
+        > a {
+          text-decoration: none;
+          font-weight: normal;
+          display: block;
+          padding: 0 30px;
+          height: 60px;
+          color: $white;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          font-weight: 100;
+          position: relative;
+
+          
+        }
+
+        ul {
+          display: none;
+          width: 262px;
+          position: absolute;
+          top: 58px;
+          margin: 0;
+          padding: 7px 0 0 0;
+          padding-top: 7px;
+          z-index: 1000;
+          left: 50%;
+          transform: translateX(-50%);
+
+          li {
+            display: block;
+            float: none;
+            padding: 16px 23px;
+            line-height: 22px;
+            margin: 0;
+            background: rgba(#666,0.85);
+
+            &:first-child {
+              padding-top: 30px;
+            }
+
+            &:last-child {
+              padding-bottom: 30px;
+            }
+
+            a {
+              border-right: 0;
+              color: #FFF;
+              font-weight: normal;
+
+              &:hover, 
+              &:focus {
+                text-decoration: none;
+                color: $md-primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header-aux {
+    position: absolute;
+    top: 0;
+    right: $large-container-padding;
+
+    .header-nav-aux {
+      position: relative;
+      float: left;
+
+      ul {
+        @include responsive-font(16px, 16px);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: block;
+          float: left;
+
+          a {
+            font-weight: normal;
+          }
+        }
+
+        li:last-child {
+          margin-right: 0;
+          padding-right: 0;
+          border-right: none;
+        }
+      }
+    }
+
+    .search-form {
+      float: right;
+      margin-left: 20px;
+
+      input {
+        width: 200px;
+      }
+    }
+  }
+}
+
+/*
+ * Compact version of the header. Usually for mobile screens. Use this if adapting
+ * the full desktop version to a mobile-friendly version is unreasonable.
+ */
+.page-header-compact {
+  background: #FFF;
+
+  .page-header-compact-container {
+    margin: 0 auto;
+    position: relative;
+    padding-left: $small-container-padding;
+    padding-right: $small-container-padding;
+  }
+
+  .header-nav-compact {
+    position: relative;
+    @extend %clearfix;
+
+    .logo {
+      display: inline-block;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      width: 200px;
+      line-height: 1;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .off-canvas-trigger {
+      float: right;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      margin-right: 2px;
+      background: none;
+      color: $md-primary-color;
+      border: 0;
+      padding: 2px 0px;
+      @include responsive-font(20px, 20px);
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        outline: 0;
+        font-weight: 700;
+      }
+
+      &.open {
+        span {
+          &.fa-times {
+            display: block;
+          }
+          
+          &.fa-bars {
+            display: none;
+          }
+        }
+      }
+
+      span {
+        @include responsive-font(44px, 44px);
+        display: block;
+        line-height: .6;
+        margin-bottom: 10px;
+
+        &.fa-times {
+          display: none;
+        }
+        
+        &.fa-bars {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.portal-login {
+  display: inline-block;
+
+  li {
+    margin-bottom: 0;
+    padding-left: 15px;
+  }
+
+  a {
+    color: $md-secondary-color;
+    @include responsive-font(16px, 16px);
+  }
+
+  .log-in-text {
+    background: $md-secondary-color;
+    color: $white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 3px;
+    text-align: center;
+    line-height: 25px;
+  }
+}

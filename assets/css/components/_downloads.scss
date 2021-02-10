@@ -1,0 +1,39 @@
+.block-download-callout {
+  display: block;
+  width: 100%;
+  line-height: 1;
+  position: relative;
+  background: $dk-secondary-color;
+  padding: 25px 40px 35px;
+  color: $white;
+  @extend %block-margin;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background: $md-primary-color;
+
+    .callout-link {
+      color: $white;
+
+      &::after {
+        border-color: transparent transparent transparent $white;
+      }
+    }
+  }
+
+  h3 {
+    color: $white;
+    @include responsive-font(24px, 32px);
+  }
+
+  .callout-link {
+    display: inline-block;
+    top: -1px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+}

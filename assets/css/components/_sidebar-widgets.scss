@@ -1,0 +1,84 @@
+.sidebar-widget {
+  margin: 0 auto 30px;
+  max-width: 400px;
+  padding: 25px 25px 25px;
+  background: $lt-secondary-color;
+
+  h2 {
+    letter-spacing: 1.26px;
+    font-weight: 500;
+    border-bottom: 2px solid $md-primary-color;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    @include responsive-font(32px, 42px);
+    color: $md-secondary-color;
+
+    a {
+      color: $md-secondary-color;
+    }
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    @include responsive-font(32px, 32px);
+  }
+}
+
+.sidebar-widget-callout,
+.sidebar-widget-image-ad {
+  figure {
+    margin: 0;
+    font-size: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.sidebar-widget-newsletter-signup {
+  .freeform-field-type--mailing_list {
+    display: none;
+  }
+
+  .freeform-row {
+    flex-flow: column;
+  }
+  
+  input[type="text"], input[type="email"], input[type="datetime"], input[type="password"], select, textarea {
+    background: none;
+
+    &::placeholder {
+      color: $dk-secondary-color;
+    }
+  }
+}
+
+.sidebar-widget.nav-sidebar {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 0;
+      margin-bottom: 15px;
+
+      a {
+        color: $md-secondary-color;
+        font-weight: 100;
+      }
+    }
+  }
+}

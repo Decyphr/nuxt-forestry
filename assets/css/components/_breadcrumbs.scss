@@ -1,0 +1,35 @@
+.nav-breadcrumbs {
+  display: none;
+  @extend %clearfix;
+
+  @include mq(medium) {
+    display: block;
+    padding: 10px 0;
+    position: relative;
+    @include responsive-font(20px, 20px);
+    margin-bottom: 15px;
+  }
+
+  li {
+    display: inline-block;
+    color: $black;
+    font-weight: 300;
+
+    &.current-page {
+      color: $black;
+    }
+
+    a {
+      color: $md-primary-color;
+      padding-right: 2px;
+      padding-left: 2px;
+
+      &:hover, 
+      &:focus {
+        color: $md-secondary-color;
+        text-decoration: none;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,62 @@
+.block-blockquote {
+  background: $lt-secondary-color;
+  color: $md-dk-secondary-color;
+	padding: 22px 25px;
+	display: block;
+	text-align: left;
+  position: relative;
+  @extend %block-margin;
+
+  @include mq(small) {
+    padding: 37px 45px;
+  }
+
+  &.position-full {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.block-pullquote {
+  @include responsive-font(20px, 24px);
+  font-style: italic;
+  color: $md-primary-color;
+  position: relative;
+
+  &::before {
+    content: url('/assets/images/quote.svg');
+    position: absolute;
+    left: -40px;
+    top: 2px;
+  }
+
+  &.position-full {
+    margin-left: 50px;
+    margin-right: 0;
+
+    @include mq(small) {
+      margin-left: 90px;
+      margin-right: 70px;
+    }
+  }
+
+  cite {
+    font-weight: 200;
+    color: $dk-secondary-color;
+    @include responsive-font(18px, 20px);
+  }
+}
+
+.block-pullquote.position-left,
+.block-blockquote.position-left,
+.block-pullquote.position-right,
+.block-blockquote.position-right {
+  @include mq($from: small) {
+    max-width: calc(50% - #{$large-position-margin});
+  }
+}
+

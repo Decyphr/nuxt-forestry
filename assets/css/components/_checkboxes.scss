@@ -1,0 +1,133 @@
+.custom-checkbox input[type='checkbox'],
+.custom-radio input[type='radio'] {
+  display: block;
+  position: absolute;
+  opacity: 0;
+
+  & + span {
+    padding-left: 25px;
+    position: relative;
+    display: inline-block;
+    @include responsive-font(1.6rem, 1.6rem);
+    color: $md-secondary-color;
+    line-height: 1.4;
+  }
+}
+
+.custom-checkbox input[type='checkbox'] {
+
+  &+ span::before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #979797;
+    background: $white;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '';
+    color: transparent;
+    font-size: 11px;
+    line-height: 1.4;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &:focus + span::before {
+    background: $white;
+  }
+
+  &:checked + span::before {
+    color: $white;
+    background: $md-primary-color;
+    border: 1px solid $md-primary-color;
+  }
+
+  &:focus:checked + span::before {
+
+  }
+}
+
+.custom-radio input[type='radio'] {
+
+  &+ span::before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #979797;
+    background: $white;
+    color: $white;
+    content: "";
+    font-size: 0.7em;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 100%;
+  }
+
+  &:focus + span::before {
+    border-color:#979797;
+  }
+
+  &:checked + span::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    background: $md-primary-color;
+    border-radius: 50%;
+  }
+}
+
+.custom-checkbox.custom-mailing-list {
+  span {
+    padding-left: 2em;
+    position: relative;
+    display: inline-block;
+  
+    &::before {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0.2em;
+      width: 1.8em;
+      height: 1.8em;
+      border: 1px solid #9c9c9c;
+      background: $white;
+      font-family: fontawesome;
+      content: '';
+      color: transparent;
+      font-size: 0.7em;
+      line-height: 1.6;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    &.checked::before {
+      color: $white;
+      background: #333;
+      border: 1px solid #333;
+    }
+}
+
+  label {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    z-index: 500;
+  }
+
+  input {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    z-index: 65;
+  }
+
+}

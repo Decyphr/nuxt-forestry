@@ -1,0 +1,158 @@
+/*
+.block-gallery {
+  @extend %clearfix;
+  @extend %block-margin;
+  position: relative;
+  clear: both;
+  width: 100%;
+  margin-bottom: 40px;
+
+  @include mq($from: small) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .carousel-cell {
+    width: 75%;
+
+    img {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    figcaption {
+      padding: 0 40px;
+    }
+  }
+  
+}
+*/
+
+.block-gallery {
+  @extend %clearfix;
+  @extend %block-margin;
+  position: relative;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-bottom: 80px;
+  text-align: center;
+
+  @include mq($from: small) {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 80%;
+  }
+
+  .carousel-cell {
+    width: 100%;
+    margin-bottom: 20px;
+    background: $white;
+
+    figure {
+      position: relative;
+      margin: 0;
+      line-height: 0;
+      overflow: hidden;
+
+    }
+
+    img {
+      width: 100%;
+    }
+
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: $md-secondary-color;
+      line-height: 1.5;
+      padding: 8px 20px;
+    }
+  }
+
+  .flickity-page-dots {
+    bottom: -15px;
+
+    @include mq(small) {
+      bottom: -45px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background: $lt-secondary-color;
+      opacity: 1;
+      padding: 0 3px;
+
+      @include mq(medium) {
+        width: 27px;
+        height: 27px;
+        padding: 0 6px;
+      }
+
+      &.is-selected {
+        background-color: $md-primary-color;
+      }
+    }
+  }
+
+  .flickity-prev-next-button {
+    width: 27px;
+    height: 30px;
+    background: transparent;
+    padding: 0;
+
+    .flickity-button-icon {
+      display: none;
+    }
+
+    &.previous {
+      position: absolute;
+      font-size: 0;
+      left: -50px;
+      top: calc(50% - 20px);
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20.5px 27px 20.5px 0;
+        border-color: transparent $md-secondary-color transparent transparent;
+      }
+
+      &:hover,
+      &:focus {
+        &::after {
+          border-color: transparent $md-primary-color transparent transparent;
+        }
+      }
+    }
+    &.next {
+      position: absolute;
+      font-size: 0;
+      right: -50px;
+      top: calc(50% - 20px);
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20.5px 0 20.5px 27px;
+        border-color: transparent transparent transparent $md-secondary-color;
+      }
+
+      &:hover,
+      &:focus {
+        &::after {
+          border-color: transparent transparent transparent $md-primary-color;
+        }
+      }
+    }
+  }
+  
+}

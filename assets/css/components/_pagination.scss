@@ -1,0 +1,85 @@
+.pagination {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  @extend %block-margin;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @extend %clearfix;
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 8px;
+    padding-left: 0;
+
+    &::before {
+      display: none;
+    }
+
+    a {
+      display: block;
+      width: 20px;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      @include responsive-font(18px, 18px);
+      color: $black;
+      font-weight: 500;
+      text-decoration: none;
+
+      &:hover, 
+      &:focus {
+        color: $md-primary-color;
+      }
+
+      span {
+        color: $black;
+        @include responsive-font(18px, 18px);
+      }
+    }
+
+    &.current {
+      z-index: 5;
+
+      &:hover, 
+      &:focus {
+        outline: none;
+      }
+
+      a {
+        color: $md-primary-color;
+
+        &:hover, 
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &.previous {
+      margin-right: 6px;
+
+      span {
+        &:hover, 
+        &:focus {
+          color: $md-primary-color;
+        }
+      }
+    }
+
+    &.next {
+      span {
+        &:hover, 
+        &:focus {
+          color: $md-primary-color;
+        }
+      }
+    }
+  }
+}

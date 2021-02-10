@@ -1,0 +1,184 @@
+html {
+  height: 100%;
+  @extend %primary-font;
+	color: $black;
+  font-weight: 200;
+  line-height: 1.30;
+  font-size: 62.5%
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $white;
+  position: relative;
+  min-height: 100%;
+  color: $black;
+  @include responsive-font(1.8rem, 2.0rem);
+}
+
+html, 
+body {
+  overflow: auto;
+  overflow-x: hidden;
+  height: auto;
+}
+
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+a img {
+  border:none;
+}
+
+h1, 
+h2,
+h3, 
+h4, 
+h5, 
+h6 {
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  @extend %primary-font;
+  color: $md-secondary-color;
+  font-weight: 700;
+}
+
+h1 {
+  @include responsive-font(4rem, 6.4rem);
+  color: $black;
+}
+
+h2 {
+  @include responsive-font(38px, 46px);
+  color: $black;
+  letter-spacing: 2.72px;
+}
+
+h3 {
+  @include responsive-font(34px, 38px);
+  letter-spacing: 1.14px;
+  font-weight: 500;
+}
+
+h4,
+h5, 
+h6 {
+  @include responsive-font(20px, 32px);
+  letter-spacing: 0.96px;
+  font-weight: 400;
+  color: $dk-grey;
+}
+
+p {
+  & + h2,
+  & + h3 {
+    margin-top: 30px;
+  }
+}
+
+/* Links */
+a {
+  color: $md-primary-color;
+  text-decoration: none;
+
+  &:hover, 
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: #AAA;
+  clear: both;
+  margin: 30px 0;
+  width: 100%;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* Blockquotes */
+blockquote {
+  display: block;
+  margin-bottom: 30px;
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Lists */
+ul, 
+ol {
+  @extend %block-margin;
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 20px;
+
+  ul, 
+  ol {
+    margin: 0;
+
+    li {
+      padding-left: 30px;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  &.inline {
+    display: inline-block;
+
+    li {
+      display: block;
+      float: left;
+      margin-right: 5px;
+    }
+  }
+
+  li {
+    padding-left: 38px;
+    position: relative;
+    margin-bottom: 5px;
+  }
+
+  &.no-bullets {
+    margin: 0;
+
+    li {
+      padding-left: 0;
+      text-indent: 0;
+      margin-bottom: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+ol {
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+a[href^="tel"] {
+    color: inherit;
+    text-decoration: none;
+}
+

@@ -1,0 +1,46 @@
+.block-content, .accordion-content, .blockquote, .block-rich-content {
+  ul {
+    list-style: none;
+    padding-left: 40px;
+
+    li {
+      padding-left: 0;
+      text-indent: -24px;
+
+      &::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        background: $md-primary-color;
+        display: inline-block;
+        transform: rotate(45deg);
+        margin-right: 12px;
+      }
+    }
+  }
+
+  ol {
+    counter-reset: item;
+    list-style: none;
+
+    li {
+      &::before {
+        content: counter(item) ". ";
+        counter-increment: item;
+        color: $md-primary-color;
+        display: inline-block;
+        width: 25px;
+        margin-left: -25px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.block-disclaimer {
+	@include responsive-font(14px, 14px);
+  font-style: italic;
+  color: $md-secondary-color;
+  @extend %block-margin;
+  text-align: center;
+}

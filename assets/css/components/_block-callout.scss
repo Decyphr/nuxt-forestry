@@ -1,0 +1,128 @@
+.block-callout {
+  @extend %block-margin;
+  text-align: center;
+  padding: 30px 30px;
+  clear: both;
+  width: 100%;
+  background-color: $lt-secondary-color;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  color: $black;
+
+  @include mq(small) {
+    padding: 35px 60px;
+  }
+
+  &.bg-image {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($white, .5);
+      z-index: 3;
+    }
+  }
+
+  
+
+  &.dark-bg {
+    color: $white;
+    background-color: $dk-secondary-color;
+
+    &.bg-image {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($dk-secondary-color, .5);
+        z-index: 3;
+      }
+    }
+
+    
+
+    h3 {
+      color: $white;
+    }
+  }
+
+  .responsive-bg-image {
+		img {
+			position: absolute;
+			top: 50%;
+      left: 50%; 
+      transform: translate(-50%,-50%); 
+      position: absolute;
+      z-index: 1;
+	
+			width: auto;
+			height: auto;
+	
+			max-height: none;
+			max-width: none;
+	
+			min-height: 100%;
+			min-width: 100%;
+		}
+	}
+
+  video {
+    display: none;
+    
+    @include mq(medium) {
+      display: block;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      vertical-align: baseline;
+      z-index: 0;
+      transform: translateX(-50%) translateY(-20%);
+      z-index: 2;
+    }
+  }
+
+  video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+  }
+  
+
+  .block-callout-content {
+    z-index: 4;
+    position: relative;
+  }
+
+  p {
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+
+    a, 
+    a[href^="tel"] {
+      color: $black;
+    }
+  }
+
+  h3 {
+    color: $black;
+    letter-spacing: 2.72px;
+    font-weight: 400;
+    @include responsive-font(32px, 46px);
+  }
+  
+  .btn {
+    clear: both;
+    margin-top: 20px;
+  }
+}

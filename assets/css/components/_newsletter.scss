@@ -1,0 +1,137 @@
+.newsletter {
+  background: $md-primary-color;
+  padding: 25px 30px;
+  // display: flex;
+  // flex-flow: column;
+  // justify-content: flex-start;
+  // align-items: center;
+  color: $white;
+  text-align: center;
+
+  form {
+    @include mq(small) {
+      flex-flow: row;
+      justify-content: space-between;
+    }
+  }
+
+  
+
+  &.newsletter-interior {
+    .freeform-row {
+      flex-flow: column;
+
+      .freeform-column {
+        &.freeform-field-type--submit {
+          flex: 1 1 auto;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  h3 {
+    color: $white;
+    @include responsive-font(24px, 32px);
+    letter-spacing: 0.96px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  form {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 10px;    
+
+    @include mq(small) {
+      flex: 0 0 60%;
+      max-width: 60%;
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
+  .freeform-row  {
+    flex-flow: row;
+   // justify-content: flex-end;
+   align-items: flex-end;
+
+    .error {
+      color: $white;
+    }
+
+    .freeform-column {
+      padding: 0;
+
+      &.freeform-field-type--submit {
+
+        @include mq(small) {
+          width: 100px;
+          flex: 0 0 100px;
+        }
+      }
+    }
+  }
+
+  input {
+    border-color: $white;
+    background: $md-primary-color;
+    color: $white;
+
+    &::placeholder {
+      color: $white;
+      font-weight: 100;
+    }
+
+    &:focus {
+      border-color: $white;
+      background: $md-primary-color;
+    }
+  }
+
+  .invalid input[type="text"], .invalid input[type="email"], .invalid input[type="datetime"], .invalid input[type="password"], .invalid textarea {
+    background: $md-primary-color;
+  }
+
+  .freeform-field-type--mailing_list {
+    display: none;
+  }
+
+  .btn {
+    background: none;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    border: 0;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+
+    @include mq(small) {
+      padding-top: 0px;
+      height: auto;
+    }
+
+    &:hover,
+    &:focus {
+      color: $lt-secondary-color;
+    }
+  }
+}
+
+.newsletterSignup {
+  .freeform-field-type--mailing_list {
+    display: none;
+  }
+}

@@ -1,0 +1,126 @@
+.hero {
+  
+}
+
+.hero-background {
+  min-height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;  
+
+  @include mq(small) {
+    min-height: 675px;
+  }
+}
+
+.hero-container {
+  max-width: $max-width;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+
+  @include mq($from: medium) {
+    padding-left: $large-container-padding;
+    padding-right: $large-container-padding;
+  }
+}
+
+.hero-callout {
+  position: relative;
+  margin-left: auto;
+  margin-right: 0;
+  width: 100%;
+  background: rgba(#f2f2f2, 0.89);
+  padding: 70px 50px;
+  @include responsive-element(padding-top, 20px, 70px, 70px);
+  @include responsive-element(padding-bottom, 20px, 70px, 70px);
+  @include responsive-element(padding-left, 30px, 50px, 5px);
+  @include responsive-element(padding-right, 30px, 50px, 50px);
+  color: $black;
+  
+
+  @include mq(small) {
+    max-width: 545px;
+    right: $small-container-padding;
+    bottom: -80px;
+    right: 0;
+    position: absolute;
+  }
+
+  @include mq(medium) {
+    right: $large-container-padding;
+  }
+
+  &::before {
+    content: '';
+    height: 10px;
+    width: 90%;
+    background: $md-primary-color;
+    position: absolute;
+    right: 0;
+    left: 10%;
+    bottom: -10px;
+  }
+
+  &::after {
+    content: '';
+    height: 5px;
+    width: 75%;
+    background: $md-secondary-color;
+    position: absolute;
+    right: 0;
+    left: 25%;
+    bottom: -15px;
+  }
+
+  h1 {
+    @include responsive-font(42px, 64px);
+    color: $black;
+  }
+
+  p {
+    font-weight: normal;
+    margin-bottom: 40px;
+  }
+
+  .btn-primary {
+    background: rgba($white, .62);
+    margin-bottom: 60px;
+
+    @include mq(small) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.interior-hero {
+  min-height: 345px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+  background-color: $md-secondary-color;
+
+  &.interior-hero-image {
+    &::after {
+      content: '';
+      background: rgba(#a0a0a0, .5);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+  }
+
+  h1 {
+    padding-top: 140px;
+    z-index: 5;
+    position: relative;
+    margin-bottom: 0;
+    color: $white;
+  }
+}

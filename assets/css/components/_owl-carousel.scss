@@ -1,0 +1,5 @@
+.owl-carousel  .owl-wrapper,
+.owl-carousel  .owl-item {
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+}

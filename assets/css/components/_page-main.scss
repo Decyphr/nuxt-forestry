@@ -1,0 +1,8 @@
+.page-main {
+  padding-top: 102px;
+  @extend %clearfix;
+
+  @include mq($from: medium) {
+    padding-top: 156px;
+  }
+}

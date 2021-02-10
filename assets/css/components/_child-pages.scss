@@ -1,0 +1,59 @@
+.block-child-pages {
+  justify-content: space-between;
+  @extend %block-margin;
+  margin-bottom: 60px;
+  @include flex-grid($col-class: 'block-child-page-column', $col-number: 1, $gutter-v: 80px, $gutter-h: 0px, $until: small);
+  @include flex-grid($col-class: 'block-child-page-column', $col-number: 2, $gutter-v: 80px, $gutter-h: 18px, $from: small);
+
+  .block-child-page {
+    height: 100%;
+    display: block;
+    width: 100%;
+    
+    a {
+      width: 100%;
+      padding: 25px 22px;
+      display: block;
+      background: $lt-secondary-color;
+      text-decoration: none;
+      height: 100%;
+      position: relative;
+
+      &:hover, 
+      &:focus {
+        background: $dk-secondary-color;
+
+        h3, 
+        h4 {
+          color: $white;
+        }
+
+        p {
+          color: $white;
+        }
+      }
+    }
+
+    h3 {
+      @include responsive-font(26px, 32px);
+      color: $md-secondary-color;
+      border-bottom: 2px solid $md-primary-color;
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+    }
+
+    p {
+      margin: 0;
+      color: $black;
+      font-weight: normal;
+    }
+
+    .btn {
+      position: absolute;
+      right: 0;
+      bottom: -49px;
+      height: 49px;
+    }
+    
+  }
+}

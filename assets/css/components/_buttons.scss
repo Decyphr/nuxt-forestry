@@ -1,0 +1,156 @@
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: top;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 14px 20px 14px 20px;
+  @include responsive-font(18px, 18px);
+  border-radius: 0;
+  font-weight: normal;
+  position: relative;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: #000;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: disabled;
+    opacity: .65;
+    box-shadow: non;
+  }
+}
+
+a.btn {
+  &.disabled,
+  fieldset[disabled] & {
+    pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+  }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+
+// Arguments are button text color, button background color, button border color
+.btn,
+.btn-default {
+  @include button-plain($md-primary-color, $white, $md-primary-color);
+  @include button-highlight($dk-primary-color, $white, $dk-primary-color);
+}
+.btn-primary {
+  @include button-plain($md-primary-color, $white, $md-primary-color);
+  @include button-highlight($dk-primary-color, $white, $dk-primary-color);
+  height: 45px;
+  padding: 8px 60px 8px 10px;
+  @include responsive-font(18px, 18px);
+  border-width: 3px;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 15px;
+  
+  @include mq(medium) {
+    height: 64px;
+    padding: 14px 80px 14px 20px;
+    @include responsive-font(24px, 24px);
+  }
+
+  &::after {
+    content: '';
+    width: 45px;
+    height: 41px;
+    background: $md-primary-color;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    @include mq(medium) {
+      width: 64px;
+      height: 60px;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: 9px;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 11px 0 11px 13px;
+    border-color: transparent transparent transparent $white;
+
+    @include mq(medium) {
+      top: 18px;
+      right: 22px;
+      border-width: 13px 0 13px 17px;
+    }
+  }
+
+  &:hover {
+    &::after {
+      background: $dk-primary-color;
+    }
+  }
+}
+
+.btn-secondary {
+  @include button-plain($white, $md-primary-color, $md-primary-color);
+  @include button-highlight($white, $dk-primary-color, $dk-primary-color);
+  padding: 12px 45px 12px 20px;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 9px 0 9px 12px;
+    border-color: transparent transparent transparent $white;
+  }
+}
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}

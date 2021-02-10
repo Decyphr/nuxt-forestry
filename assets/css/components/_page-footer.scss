@@ -1,0 +1,160 @@
+.page-footer {
+  /*
+   * Avoid styling this element.
+   */
+}
+
+/*
+ * Full desktop version of the footer. All the bells and whistles.
+ */
+.page-footer-main {
+  background: $white;
+
+  .page-footer-main-container {
+    max-width: $max-width;
+    margin: 0 auto;
+    position: relative;
+    padding-left: $large-container-padding;
+    padding-right: $large-container-padding;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    align-items: flex-start;
+
+    @include mq(medium) {
+      flex-flow: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+}
+
+.footer-contact-info {
+  @include responsive-font(14px, 14px);
+
+  img {
+    width: 200px;
+  }
+  
+  .address {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+  .copyright {
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+  }
+}
+
+.footer-navigation {
+  text-align: left;
+
+  @include mq(medium) {
+    text-align: right;
+  }
+}
+
+/*
+ *------------------------------------------------------------------------------
+ * Footer Primary
+ *------------------------------------------------------------------------------
+ */
+
+.footer-nav-primary {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 40px;
+
+  @include mq(medium) {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 0; // prevent spaces because of inline-block li's
+
+    li {
+      margin: 0 15px 25px 0;
+      padding: 0 15px 0 0;
+      display: inline-block;
+      width: 45%;
+
+      @include mq(small) {
+        width: auto;
+        margin: 0 15px 0 0;
+      }
+
+      a {
+        @include responsive-font(16px, 16px);
+        font-weight: normal;
+        color: $md-secondary-color;
+        text-transform: uppercase;
+        letter-spacing: 1.33px;
+      }
+    }
+
+    li:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      border-right: none;
+    }
+  }
+}
+
+/*
+ * Bottom of footer
+ */
+  .footer-nav-bottom {
+    position: relative;
+    display: block;
+    margin-bottom: 40px;
+
+    @include mq(medium) {
+      margin-bottom: 0;
+    }
+  
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      font-size: 0; // prevent spaces because of inline-block li's
+  
+      li {
+        margin: 0 13px 15px 0;
+        padding: 0 13px 0 0;
+        display: inline-block;
+  
+        a,
+        span {
+          @include responsive-font(18px, 18px);
+          font-weight: normal;
+          color: $dk-secondary-color;
+          font-style: italic;
+        }
+  
+        img {
+          width: 90px;
+          height: 18px;
+          display: inline-block;
+        }
+      }
+  
+      li:last-child {
+        margin-right: 0;
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+  }  
+

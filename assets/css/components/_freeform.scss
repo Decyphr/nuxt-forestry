@@ -1,0 +1,395 @@
+.block-form {
+  @extend %block-margin;
+}
+
+.freeform-pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0 0 10px;
+  list-style: none;
+}
+
+.freeform-pages li {
+  margin: 0 10px 0 0;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding-left: 0;
+  padding: 10px 20px;
+  vertical-align: middle;
+}
+
+.freeform-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0 -15px;
+
+  @include mq($until: small) {
+    display: block !important; //Not sure why
+  }
+
+  .freeform-column {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 10px 0;
+    margin: 0 15px;
+    box-sizing: border-box;
+
+    fieldset {
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    label {
+      display: block;
+    }
+
+    // &.freeform-field-type--text,
+    // &.freeform-field-type--email,
+    // &.freeform-field-type--select,
+    // &.freeform-field-type--textarea {
+    //   .freeform-label {
+    //     position: absolute !important;
+    //     overflow: hidden;
+    //     width: 1px;
+    //     height: 1px;
+    //     padding: 0;
+    //     border: 0;
+    //     clip: rect(1px, 1px, 1px, 1px);
+    //   }
+    // }
+
+    .freeform-label {
+      font-weight: bold;
+      @include responsive-font(2.0rem, 2.0rem);
+      letter-spacing: 0.56px;
+      text-align: left;
+    }
+
+    .freeform-label.freeform-required:after {
+      content: "*";
+      margin-left: 5px;
+      color: $md-primary-color;
+    }
+
+    .freeform-input {
+      width: 100%;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    .custom-checkbox .freeform-input[type=checkbox],
+    .custom-radio .freeform-input[type=radio] {
+      position: absolute;
+      width: auto;
+    }
+
+    /* This is to fix an issue with IE and having singular checkboxes unclickable without this css. Height and width can be changed based on checkbox size */
+    .custom-checkbox .freeform-input[type=checkbox] {
+      width: 24px;
+      height: 24px;
+      z-index: 5;
+    }
+
+    .freeform-input-only-label {
+      font-weight: normal;
+    }
+
+    .freeform-input-only-label>.freeform-input {
+      display: inline-block;
+      width: auto;
+      margin-right: 5px;
+    }
+
+    .freeform-errors {
+      list-style: none;
+      padding: 0;
+      margin: 5px 0 0;
+    }
+
+    .freeform-errors>li {
+      color: $md-secondary-color;
+      @include responsive-font(1.4rem, 1.4rem);
+    }
+
+    .freeform-instructions {
+      margin: 0 0 5px;
+      color: #ABA7A7
+    }
+
+    &.freeform-column-content-align-left {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start
+    }
+
+    &.freeform-column-content-align-left>button:not(:first-of-type) {
+      margin-left: 5px;
+    }
+
+    &.freeform-column-content-align-center {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    &.freeform-column-content-align-center>button:not(:first-of-type) {
+      margin-left: 5px;
+    }
+
+    &.freeform-column-content-align-right {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+    }
+
+    &.freeform-column-content-align-right>button:not(:first-of-type) {
+      margin-left: 5px;
+    }
+
+    &.freeform-column-content-align-spread {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+
+    &.freeform-column-content-align-spread>button:not(:first-of-type) {
+      margin-left: 5px;
+    }
+  }
+}
+
+.freeform-form-has-errors {
+  color: red;
+}
+
+/* Custom form styles */
+input[type="text"],
+input[type="email"],
+input[type="datetime"],
+input[type="password"],
+select,
+textarea {
+  border: 0;
+  border-right: 2px solid $md-secondary-color;
+  border-bottom: 2px solid $md-secondary-color;
+  @include responsive-font(20px, 20px);
+  line-height: 22px;
+  padding: 7px 20px 7px 0;
+  background: #fff;
+  outline: none;
+  appearance: none;
+  border-radius: 0;
+
+  &::placeholder {
+    opacity: 1;
+    color: $md-secondary-color;
+  }
+
+  &:focus {
+    border-color: $md-primary-color;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="datetime"],
+input[type="password"],
+input[type="file"],
+select {
+  height: 48px;
+}
+
+.invalid {
+  input[type="text"],
+  input[type="email"],
+  input[type="datetime"],
+  input[type="password"],
+  textarea {
+    background: $white;
+    border-color: $error;
+
+    &:focus {
+      border-color: $error;
+    }
+  }
+
+  .custom-select {
+    select {
+      color: $error;
+      border-color: $error;
+
+      &:focus {
+        border-color: $error;
+      }
+    }
+  }
+
+  .custom-checkbox  {
+    span {
+      color: $error;
+    }
+
+    input[type='checkbox']+span::before {
+      border-color: $error;
+    }
+  }
+
+  .custom-radio  {
+    span {
+      color: $error;
+    }
+
+    input[type='radio']+span::before {
+      border-color: $error;
+    }
+  }
+}
+
+.freeform-label {
+  margin-bottom: 10px;
+}
+
+.freeform-row {
+  .freeform-column {
+    .freeform-label {
+      font-weight: 300;
+    }
+  }
+
+  .error {
+    color: $md-secondary-color;
+    @include responsive-font(1.4rem, 1.4rem);
+    font-style: italic;
+    font-weight: 400;
+  }
+}
+
+
+.dark-bg {
+  input[type="text"], 
+  input[type="email"], 
+  input[type="datetime"], 
+  input[type="password"], 
+  select, 
+  textarea {
+    background: $dk-secondary-color;
+    border-color: $white;
+    color: $white;
+
+    &::placeholder {
+      color: rgba($white, .63);
+      font-weight: 200;
+    }
+  }
+
+  .custom-select {
+    select {
+      background: $dk-secondary-color;
+      border-color: $white;
+      color: $white;
+    }
+  }
+
+  textarea {
+    border: 2px solid $white;
+  }
+
+  .freeform-row {
+    .freeform-column {
+      .freeform-input {
+        &.btn {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .freeform-column {
+    padding: 20px 0;
+    text-align: left;
+
+    &.freeform-field-type--textarea {
+      .freeform-label {
+        clip: unset;
+        position: relative !important;
+        width: auto;
+        height: auto;
+        text-align: left;
+       // color: rgba($white, .63);
+        font-weight: 200;
+      }
+    }
+  }
+  .custom-checkbox input[type='checkbox'] + span, 
+  .custom-radio input[type='radio'] + span {
+    color: $white;
+  }
+
+
+  .btn,
+  .btn-primary {
+    margin: 0 auto;
+    background: $white;
+    border: $white;
+    color: $md-primary-color;
+    text-transform: uppercase;
+    padding: 14px 50px 14px 20px;
+
+    &:hover,
+    &:focus {
+      background: $md-primary-color;
+      color: $white;
+
+      &::before {
+        border-color: transparent transparent transparent $white;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      border-color: transparent transparent transparent $md-primary-color;
+    }
+  }
+}
+
+.medium-bg {
+  input[type="text"], 
+  input[type="email"], 
+  input[type="datetime"], 
+  input[type="password"], 
+  select, 
+  textarea {
+    background: $lt-secondary-color;;
+  }
+
+  .custom-select {
+    select {
+      background: $lt-secondary-color;
+    }
+  }
+
+}

@@ -1,0 +1,180 @@
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: rgba(#000, 0.5);
+  z-index: 50;
+}
+
+.off-canvas-slidebar {
+  height: calc(100% - 102px); /* 100% Full-height */
+  width: 100%; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 3000; /* Stay on top */
+  top: 102px; /* Stay at the top */
+  right: -100%;
+  background-color: $md-primary-color; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 0px; /* Place content 60px from the top */
+  transition: right .5s; /* 0.5 second transition effect to slide in the sidenav */
+
+  .off-canvas-nav {
+    display: none;
+  }
+
+  &.open {
+    right: 0;
+
+    .off-canvas-nav {
+      display: block;
+    }
+  }
+}
+
+.off-canvas-nav {
+  .off-canvas-nav-container {
+    > ul {
+      list-style: none;
+      margin: 0;
+      padding: 50px 0 0;
+  
+      > li {
+        padding: 0;
+        margin: 25px 0;
+  
+        &.open {
+          & > ul {
+            display: block;
+          }
+          
+          a {
+            button {
+              &.is-vishidden {
+                &::after {
+                  content: '\F143';
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+  
+        a {
+          padding: 16px;
+          display: block;
+          color: #FFF;
+          position: relative;
+          text-align: center;
+          text-transform: uppercase;
+  
+          &:hover, 
+          &:focus {
+            text-decoration: none;
+          }
+  
+          button {
+            &.is-vishidden {
+              display: none;
+              border-radius: 0;
+              position: absolute !important;
+              width: 48px;
+              height: 100%;
+              background: none;
+              top: 0;
+              right: 0;
+              clip: inherit;
+              clip: unset !important;
+              border-left: 1px solid $white;
+  
+              &::after {
+                content: '\F140';
+                font-family: 'Material Design Icons';
+                color: $white;
+                @include responsive-font(24px, 24px);
+              }
+  
+              .vishidden {
+                position: absolute !important;
+                overflow: hidden;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                border: 0;
+                clip: rect(1px, 1px, 1px, 1px);
+              }
+            }
+          }
+        }
+  
+        ul {
+          display: none;
+          margin-left: 0;
+          padding-left: 25px;
+          border-top: 1px solid $white;
+  
+          li {
+            padding: 0;
+            margin: 0;
+            border-bottom: 0px;
+            list-style: none;
+  
+            a {
+              padding: 10px;
+              @include responsive-font(16px, 16px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .header-nav-aux {
+    width: 100%;
+    text-align: center;
+
+    .portal-login {
+      margin-left: 0;
+      margin-bottom: 50px;
+
+      li {
+        padding-left: 0;
+      }
+
+      a {
+        color: $white;
+        @include responsive-font(22px, 22px);
+
+        .log-in-text {
+          background: $white;
+          color: $md-primary-color;
+          width: 33px;
+          height: 33px;
+          line-height: 33px;
+        }
+      }
+    }
+  }
+
+  ul.social-icons {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    
+    li {
+      a {
+        height: 45px;
+        width: 45px;
+        font-size: 28px;
+        background: $white;
+        color: $md-primary-color;
+        padding-top: 5px;
+      }
+    }
+  }
+}

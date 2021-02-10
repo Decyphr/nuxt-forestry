@@ -1,0 +1,148 @@
+.block-rich-content {
+  display: flex;
+  flex-flow: column;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: $lt-secondary-color;
+  @extend %block-margin;
+
+  @include mq(small) {
+    flex-flow: row;
+  }
+
+  h2,
+  h3, 
+  h4,
+  h5,
+  h6 {
+    color: $black;
+  }
+
+  &.dark-bg {
+    background-color: $dk-secondary-color;
+    color: $white;
+
+    h2,
+    h3, 
+    h4,
+    h5,
+    h6 {
+      color: $white;
+    }
+
+    // .btn {
+    //   background: $md-primary-color;
+    //   border-color: $md-primary-color;
+    //   color: $white;
+
+    //   &:hover,
+    //   &:focus {
+    //     background: $lt-secondary-color;
+    //     border-color: $lt-secondary-color;
+    //     color: $white;
+    //   }
+    // }
+  }
+
+  &.inverse-order {
+    .block-rich-content-area {
+      order: 2;
+      
+
+      @include mq(small) {
+      }
+    }
+
+    .block-rich-content-change {
+      order: 1;
+      
+      @include mq(small) {
+        padding-left: 0;
+        clip-path: polygon(0 0, 100% 0%, 87% 100%, 0% 100%)
+      }
+    }
+  }
+
+  &.non-image-block {
+
+    @include mq(small) {
+      align-items: center;
+    }
+
+    .block-rich-content-area {
+      order: 1;
+    }
+
+    .block-rich-content-change {
+      order: 2;
+      min-height: auto;
+      height: auto;
+      padding: 0 25px 25px;
+    }
+
+    &.inverse-order {
+
+      .block-rich-content-area {
+        order: 1;
+
+        @include mq(small) {
+          order: 1;
+          
+        }
+      }
+
+      .block-rich-content-change {
+        order: 2;
+        
+        @include mq(small) {
+          order: 2;
+          clip-path: unset;
+        }
+      }
+    }
+  }
+
+  .block-rich-content-area {
+    flex: 0 0 100%;
+    order: 2;
+    padding: 30px;
+
+    @include mq(small) {
+      flex: 1 1 60%;
+      order: 1;
+      padding: 40px;
+      
+    }
+  }
+
+  .block-rich-content-change {
+    
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    order: 1;
+    height: 300px;
+
+    @include mq(tiny) {
+      height: 400px;
+    }
+
+    @include mq(small) {
+      order: 2;
+      flex: 0 0 40%;
+      width: 40%;
+      height: auto;
+      text-align: center;
+      clip-path: polygon(13% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
+    }
+
+  }
+}

@@ -1,0 +1,78 @@
+.callout-section {
+  padding-top: 50px;
+  padding-bottom: 20px;
+
+  @include mq(small) {
+    padding-top: 100px;
+    padding-bottom: 85px;
+  }
+}
+
+.callouts {
+  @include responsive-element(margin-top, 0px, 45px, 45px);
+  @include responsive-element(margin-bottom, 40px, 45px, 45px);
+  @include flex-grid($col-class: 'callout-column', $col-number: 1, $gutter-v: 85px, $gutter-h: 0px, $until: small);
+  @include flex-grid($col-class: 'callout-column', $col-number: 2, $gutter-v: 85px, $gutter-h: 30px, $from: small, $until: large);
+  @include flex-grid($col-class: 'callout-column', $col-number: 3, $gutter-v: 0px, $gutter-h: 30px, $from: large);
+
+  .callout-column {
+    &:first-of-type {
+      @include mq($until: small) {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.callout {
+  padding: 15px 23px;
+  height: 100%;
+  text-align: left;
+  background: $lt-secondary-color;
+  position: relative;
+  font-weight: 200;
+
+  @include mq(small) {
+    padding: 28px 35px;
+  }
+
+  h3 {
+    color: $dk-secondary-color;
+    letter-spacing: 1.14px;
+    font-weight: 500;
+    border-bottom: 2px solid $md-primary-color;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    position: absolute;
+    right: 0;
+    bottom: -49px;
+  }
+}
+
+.callout-link {
+  color: $md-primary-color;
+  position: relative;
+  @include responsive-font(18px, 18px);
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 9px 0 9px 12px;
+    border-color: transparent transparent transparent $md-primary-color;
+    right: -20px;
+    top: 1px;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
