@@ -1,4 +1,27 @@
 ---
 label: Accordion Block
 hide_body: true
-fields: []
+fields:
+- name: block_type
+  type: text
+  config:
+    required: false
+  label: Block Type
+  hidden: true
+  default: accordion
+- name: accordion_headline
+  type: text
+  config:
+    required: false
+  label: Accordion Headline
+  description: Main heading for your accordion
+- name: accordion_content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Accordion Content
+  description: Content that will be shown when the accordion is open.
