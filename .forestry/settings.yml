@@ -23,12 +23,10 @@ sections:
   path: content/homepage.md
   label: Home
 - type: directory
-  path: content/articles
-  label: Articles
+  path: content/news
+  label: News
   create: documents
   match: "**/*"
-  templates:
-  - article
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''

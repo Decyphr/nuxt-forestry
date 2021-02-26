@@ -34,5 +34,3 @@ fields:
       format: markdown
   label: Body
   description: Body content of the article.
-pages:
-- content/articles/another-post.md
