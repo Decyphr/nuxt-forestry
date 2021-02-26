@@ -27,7 +27,7 @@ sections:
   label: News
   create: documents
   match: "**/*"
-  new_doc_ext: ".json"
+  new_doc_ext: json
   templates:
   - news
 upload_dir: static/images
