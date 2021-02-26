@@ -1,6 +1,6 @@
 <template>
-<div>
-<!--
+  <div>
+    <!--
   {% set calloutBlockImageSizeLg = { mode: 'crop', width: 1450, height: 600 } %}
   {% set calloutBlockImageSizeMd = { mode: 'crop', width: 1100, height: 500 } %}
   {% set calloutBlockImageSizeSm = { mode: 'crop', width: 500, height: 400 } %}
@@ -57,49 +57,96 @@
     .all() %}
     -->
 
-    <div v-for="block in blocks" :key="block.id">
+    <div v-for="(block, idx) in blocks" :key="`block-${idx}`">
+      <accordion v-if="block.block_type === 'accordion'" :block="block" />
 
-      <accordion v-if="block.typeHandle === 'accordion'" :block="block"/>
+      <blockquote-block
+        v-else-if="block.block_type === 'blockquote'"
+        :block="block"
+      />
 
-      <blockquote-block v-else-if="block.typeHandle === 'blockquote'" :block="block" />
+      <button-block v-else-if="block.block_type === 'button'" :block="block" />
 
-      <button-block v-else-if="block.typeHandle === 'button'" :block="block" />
+      <callout-block
+        v-else-if="block.block_type === 'calloutBlock'"
+        :block="block"
+      />
 
-      <callout-block v-else-if="block.typeHandle === 'calloutBlock'" :block="block" />
-      
-      <callout-link v-else-if="block.typeHandle === 'calloutLink'" :block="block" />
+      <callout-link
+        v-else-if="block.block_type === 'calloutLink'"
+        :block="block"
+      />
 
-      <captioned-image v-else-if="block.typeHandle === 'image' && block.image" :block="block" />
+      <captioned-image
+        v-else-if="block.block_type === 'image' && block.image"
+        :block="block"
+      />
 
-      <child-pages v-else-if="block.typeHandle === 'showChildPages' && block.showChildPages && childPages" :children="childPages" />
+      <child-pages
+        v-else-if="
+          block.block_type === 'showChildPages' &&
+          block.showChildPages &&
+          childPages
+        "
+        :children="childPages"
+      />
 
-      <content-block v-else-if="block.typeHandle === 'contentBlock'" :block="block" />
+      <content-block
+        v-else-if="block.block_type === 'contentBlock'"
+        :block="block"
+      />
 
-      <div v-else-if="block.typeHandle === 'customCode'" v-html="block.customCode">
-      </div>
+      <div
+        v-else-if="block.block_type === 'customCode'"
+        v-html="block.customCode"
+      ></div>
 
-      <disclaimer v-else-if="block.typeHandle === 'disclaimer'" :block="block" />
+      <disclaimer
+        v-else-if="block.block_type === 'disclaimer'"
+        :block="block"
+      />
 
-      <download-callout v-else-if="block.typeHandle === 'downloadCallout'" :block="block" />
+      <download-callout
+        v-else-if="block.block_type === 'downloadCallout'"
+        :block="block"
+      />
 
-      <embedded-video v-else-if="block.typeHandle === 'embeddedVideo'" :block="block" />
+      <embedded-video
+        v-else-if="block.block_type === 'embeddedVideo'"
+        :block="block"
+      />
 
-      <featured-callout-content v-else-if="block.typeHandle === 'featuredCalloutContent'" :block="block" />
+      <featured-callout-content
+        v-else-if="block.block_type === 'featuredCalloutContent'"
+        :block="block"
+      />
 
+      <image-gallery
+        v-else-if="block.block_type === 'imageGallery'"
+        :block="block"
+      />
 
-      <image-gallery v-else-if="block.typeHandle === 'imageGallery'" :block="block" />
-      
-      <person-list v-else-if="block.typeHandle === 'personList'" :block="block" />
+      <person-list
+        v-else-if="block.block_type === 'personList'"
+        :block="block"
+      />
 
-      <pullquote-block v-else-if="block.typeHandle === 'pullquote'" :block="block" />
+      <pullquote-block
+        v-else-if="block.block_type === 'pullquote'"
+        :block="block"
+      />
 
-      <rich-content-block v-else-if="block.typeHandle === 'richContentBlock'" :block="block" />
+      <rich-content-block
+        v-else-if="block.block_type === 'richContentBlock'"
+        :block="block"
+      />
 
-      <target-anchor v-else-if="block.typeHandle === 'targetAnchor'" :block="block" />
+      <target-anchor
+        v-else-if="block.block_type === 'targetAnchor'"
+        :block="block"
+      />
 
-
-
-<!--
+      <!--
 TODO: Figure out forms
       {% case "form" %}
         {% include '_includes/blocks/form' with { 'block': block } %}
@@ -144,11 +191,11 @@ export default {
     PersonList,
     PullquoteBlock,
     RichContentBlock,
-    TargetAnchor
+    TargetAnchor,
   },
   props: {
     blocks: { type: Array, default: () => [] },
-    childPages: { type: Array, default: () => [] }
-  }
-}
+    childPages: { type: Array, default: () => [] },
+  },
+};
 </script>

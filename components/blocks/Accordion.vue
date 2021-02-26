@@ -1,27 +1,34 @@
 <template>
   <div class="block-accordion">
-    <h3 class="accordion-toggle" :class="{'open': isOpen}"><button :aria-label="`${ block.accordionHeadline }: Learn More`" :aria-expanded="isOpen" @click="toggleOpen">{{ block.accordionHeadline }}</button></h3>
-    <div class="accordion-content" v-html="block.accordionContent">
-    </div>
+    <h3 class="accordion-toggle" :class="{ open: isOpen }">
+      <button
+        :aria-label="`${block.accordion_headline}: Learn More`"
+        :aria-expanded="isOpen"
+        @click="toggleOpen"
+      >
+        {{ block.accordion_headline }}
+      </button>
+    </h3>
+    <div class="accordion-content" v-html="block.accordion_content"></div>
   </div>
 </template>
 <script>
 export default {
-  name: "Accordion",
+  name: 'Accordion',
   props: {
-    block: { type: Object, required: true }
+    block: { type: Object, required: true },
   },
 
   data() {
     return {
-      isOpen: false
-    }
+      isOpen: false,
+    };
   },
 
   methods: {
     toggleOpen() {
       this.isOpen = !this.isOpen;
-    }
-  }
-}
+    },
+  },
+};
 </script>
