@@ -2,12 +2,11 @@
 label: News
 hide_body: true
 fields:
-- name: page_fields
+- name: general
   type: include
   config: {}
-  template: page-default
-  label: Page Fields
-  description: General page fields
+  template: general-page-fields
+  label: General
 - name: news_categories
   type: tag_list
   default: []
