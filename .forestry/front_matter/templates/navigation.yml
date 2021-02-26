@@ -1,4 +1,26 @@
 ---
 label: Navigation
 hide_body: true
-fields: []
+fields:
+- name: primary_navigation
+  type: field_group_list
+  fields:
+  - name: nav_link
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: articles
+        file: 
+        path: 
+    label: Nav Link
+    description: Top level page to be included in the primary navigation bar.
+  config:
+    min: 1
+    max: 4
+    labelField: 
+  label: Primary Navigation
+  description: The main navigation of the site.
