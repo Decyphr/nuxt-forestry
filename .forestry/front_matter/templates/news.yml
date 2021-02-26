@@ -1,4 +1,15 @@
 ---
 label: News
 hide_body: true
-fields: []
+fields:
+- name: page_fields
+  type: include
+  config: {}
+  template: page-default
+  label: Page Fields
+  description: General page fields
+- name: news_categories
+  type: tag_list
+  default: []
+  label: News Categories
+  description: One or more categories associated with this news entry.
