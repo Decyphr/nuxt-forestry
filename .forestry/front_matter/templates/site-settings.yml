@@ -14,3 +14,13 @@ fields:
     required: false
   label: Company
   description: The name of your company
+- name: meta_description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Meta Description
+  description: This will be the main description for your website to help with SEO
