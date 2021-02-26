@@ -1,4 +1,26 @@
 ---
 label: Page Default
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: Title of this specific page.
+- name: featured_image
+  type: file
+  config:
+    maxSize: 3
+  label: Featured Image
+  description: Featured image to be used as an identifier for the page.
+- name: excerpt
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Excerpt
+  description: Short description of the page
