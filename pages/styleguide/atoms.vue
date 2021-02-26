@@ -35,15 +35,15 @@
     <a name="fonts"></a>
     <h2 class="sg-subheading">Fonts</h2>
 
-    <p>Primary font: "Montserrat", sans-serif;</p>
-    <p><em>Primary font italic: "Montserrat", sans-serif;</em></p>
-    <p><strong>Primary font bold: "Montserrat", sans-serif;</strong></p>
-    <p class="font-secondary">Secondary font: "Arial", cursive;</p>
+    <p>Primary font: "Font-Family", sans-serif;</p>
+    <p><em>Primary font italic: "Font-Family", sans-serif;</em></p>
+    <p><strong>Primary font bold: "Font-Family", sans-serif;</strong></p>
+    <p class="font-secondary">Secondary font: "Font-Family", cursive;</p>
     <p class="font-secondary">
-      <em>Secondary font italic: "Arial", cursive;</em>
+      <em>Secondary font italic: "Font-Family", cursive;</em>
     </p>
     <p class="font-secondary">
-      <strong>Secondary font bold: "Arial", cursive;</strong>
+      <strong>Secondary font bold: "Font-Family", cursive;</strong>
     </p>
 
     <a name="headings"></a>

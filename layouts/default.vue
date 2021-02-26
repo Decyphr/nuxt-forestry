@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="overlay"><div class="overlay-container"></div></div>
+    <hello-bar />
     <page-header />
 
     <aside class="off-canvas-slidebar" aria-label="Mobile Navigation">
@@ -25,7 +26,7 @@ export default {
     HelloBar,
     OffCanvas,
     PageHeader,
-    PageFooter,
+    PageFooter
   },
 };
 </script>
