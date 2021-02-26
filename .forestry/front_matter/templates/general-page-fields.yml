@@ -39,7 +39,6 @@ fields:
   config: {}
   template: seo-meta-data
   label: SEO Data
-  description: Specific information used to help search engines index this page.
 pages:
 - content/pages/page-1.json
 - content/pages/page-elements.json
