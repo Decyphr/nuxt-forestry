@@ -1,16 +1,15 @@
 <template>
   <ul>
-    <li><a href="#">Link</a></li>
-    <li><a href="#">Link</a></li>
-    <li><a href="#">Link</a></li>
+    <li><nuxt-link to="/">Link</nuxt-link></li>
+    <li><nuxt-link to="/">Link</nuxt-link></li>
+    <li><nuxt-link to="/">Link</nuxt-link></li>
     <li>
-      <a href="#">Parent</a>
+      <nuxt-link to="/">Parent</nuxt-link>
       <ul>
-        <li><a href="#">Child</a></li>
-        <li><a href="#">Child</a></li>
-        <li><a href="#">Child</a></li>
+        <li><nuxt-link to="/">Child</nuxt-link></li>
+        <li><nuxt-link to="/">Child</nuxt-link></li>
+        <li><nuxt-link to="/">Child</nuxt-link></li>
       </ul>
-
     </li>
   </ul>
 </template>
