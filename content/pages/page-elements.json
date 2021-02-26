@@ -1,0 +1,13 @@
+{
+  "title": "Page Elements",
+  "excerpt": "Elements",
+  "featured_image": "/images/dummy-image.jpg",
+  "content_blocks": [
+    {
+      "template": "accordion-block",
+      "block_type": "accordion",
+      "accordion_headline": "Elements Accordion",
+      "accordion_content": "Accordion Content from Elements"
+    }
+  ]
+}
