@@ -24,3 +24,11 @@ fields:
       format: markdown
   label: Excerpt
   description: Short description of the page
+- name: content_blocks
+  type: blocks
+  template_types: []
+  config:
+    min: 
+    max: 
+  label: Content Blocks
+  description: Content building blocks for the page.
