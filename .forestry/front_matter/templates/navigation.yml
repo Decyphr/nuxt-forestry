@@ -10,7 +10,7 @@ fields:
     max: 
     source:
       type: pages
-      section: articles
+      section: pages
   label: Navigation
 pages:
 - content/global/primary-navigation.json
