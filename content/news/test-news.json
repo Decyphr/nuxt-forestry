@@ -1,0 +1,16 @@
+{
+  "news_categories": [
+
+  ],
+  "title": "Test News",
+  "featured_image": "/images/dummy-image.jpg",
+  "excerpt": "Little snippet excerpt",
+  "content_blocks": [
+    {
+      "template": "accordion-block",
+      "block_type": "accordion",
+      "accordion_headline": "Accordion Headline!",
+      "accordion_content": "Accordion Content!"
+    }
+  ]
+}
