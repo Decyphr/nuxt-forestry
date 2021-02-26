@@ -14,7 +14,7 @@ sections:
   label: Navigation
   create: documents
   match: "**/*"
-  new_doc_ext: ".json"
+  new_doc_ext: json
   templates:
   - navigation
 - type: heading
