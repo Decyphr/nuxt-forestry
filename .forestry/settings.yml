@@ -23,6 +23,14 @@ sections:
   path: content/homepage.md
   label: Home
 - type: directory
+  path: content/pages
+  label: Pages
+  create: documents
+  match: "**/*"
+  new_doc_ext: json
+  templates:
+  - general-page-fields
+- type: directory
   path: content/news
   label: News
   create: documents
