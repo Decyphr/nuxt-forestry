@@ -6,14 +6,10 @@ webhook_url:
 sections:
 - type: heading
   label: General
-- type: directory
-  path: content/data
+- type: document
+  path: content/data/site-settings.json
   label: Site Information
-  create: documents
   match: "**/*"
-  new_doc_ext: json
-  templates:
-  - site-settings
 - type: heading
   label: Content
 - type: document
