@@ -4,5 +4,9 @@
   "featured_image": "/images/dummy-image.jpg",
   "content_blocks": [
 
-  ]
+  ],
+  "seo_data": {
+    "seo_title": "Page 1 - Nuxt",
+    "seo_description": ""
+  }
 }
