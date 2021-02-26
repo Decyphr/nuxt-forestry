@@ -1,4 +1,44 @@
 ---
 label: Blockquote Block
 hide_body: true
-fields: []
+fields:
+- name: block_type
+  type: text
+  config:
+    required: false
+  hidden: true
+  label: Block Type
+  default: blockquote
+- name: blockquote_content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Blockquote Content
+  description: 'The quote. '
+- name: citation
+  type: text
+  config:
+    required: false
+  label: Citation
+  description: Who is credited with this quote. (<em>Defaults to 'Anonymous'</em>)
+  default: Anonymous
+- name: blockquote_position
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Left
+    - Right
+    - Full
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Blockquote Position
+  description: How should this blockquote be positioned?
