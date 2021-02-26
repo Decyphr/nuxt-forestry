@@ -12,6 +12,8 @@ sections:
   create: documents
   match: "**/*"
   new_doc_ext: json
+  templates:
+  - site-settings
 - type: heading
   label: Content
 - type: document
