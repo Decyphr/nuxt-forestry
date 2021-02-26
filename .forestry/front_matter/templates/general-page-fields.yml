@@ -1,4 +1,36 @@
 ---
 label: General Page Fields
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: Title for the page.
+- name: excerpt
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Excerpt
+  description: Short description of the page.
+- name: featured_image
+  type: file
+  config:
+    maxSize: 64
+  label: Featured Image
+  description: Featured image to identify the page.
+- name: content_blocks
+  type: blocks
+  template_types:
+  - accordion-block
+  - blockquote-block
+  config:
+    min: 
+    max: 
+  label: Content Blocks
+  description: Building blocks for the page. <em>Use all or none.</em>
