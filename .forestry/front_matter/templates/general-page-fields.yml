@@ -35,4 +35,5 @@ fields:
   label: Content Blocks
   description: Building blocks for the page. <em>Use all or none.</em>
 pages:
+- content/pages/page-1.json
 - content/pages/page-elements.json
