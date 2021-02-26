@@ -2,20 +2,26 @@
 label: Seo / Meta Data
 hide_body: true
 fields:
-- name: seo_page_title
-  type: text
-  config:
-    required: false
-  label: SEO Page Title
-  description: Title used in search engine results to identify this page. <em>(If
-    not supplied, will default to the title field)</em>
-- name: seo_description
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: SEO Description
-  description: Description text used to describe this page in search engine results.
+- name: seo_data
+  type: field_group
+  config: {}
+  fields:
+  - name: seo_title
+    type: text
+    config:
+      required: false
+    label: SEO Title
+    description: Title used in search engine results to identify this page. <em>(If
+      not supplied, will default to the title field)</em>
+  - name: seo_description
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: SEO Description
+    description: Description text used to describe this page in search engine results.
+  label: SEO Data
+  description: Specific information used to help search engines index this page.
