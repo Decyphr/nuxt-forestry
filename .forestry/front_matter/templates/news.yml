@@ -12,3 +12,5 @@ fields:
   default: []
   label: News Categories
   description: One or more categories associated with this news entry.
+pages:
+- content/news/test-news.json

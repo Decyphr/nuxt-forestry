@@ -1,0 +1,23 @@
+{
+  "news_categories": [
+    "Category 1"
+  ],
+  "title": "Test News",
+  "excerpt": "Short excerpt",
+  "featured_image": "/images/dummy-image.jpg",
+  "content_blocks": [
+    {
+      "template": "accordion-block",
+      "block_type": "accordion",
+      "accordion_headline": "Accordion Headline!",
+      "accordion_content": "Content!"
+    },
+    {
+      "template": "blockquote-block",
+      "block_type": "blockquote",
+      "citation": "Blake Hartman",
+      "blockquote_content": "Content!",
+      "blockquote_position": "Right"
+    }
+  ]
+}
