@@ -1,37 +1,36 @@
 {
   "display_hello_bar": true,
-  "hello_bar_content": "",
-  "social_networks": 
-    {
-      "facebook": {
-        "enabled": true,
-        "link": "https://facebook.com",
-        "aria_label": "Facebook"
-      },
-      "instagram": {
-        "enabled": true,
-        "link": "https://instagram.com",
-        "aria_label": "Instagram"
-      },
-      "twitter": {
-        "enabled": true,
-        "link": "https://twitter.com",
-        "aria_label": "Twitter"
-      },
-      "pinterest": {
-        "enabled": true,
-        "link": "https://pinterest.com",
-        "aria_label": "Pinterest"
-      },
-      "youtube": {
-        "enabled": true,
-        "link": "https://youtube.com",
-        "aria_label": "Pinterest"
-      },
-      "googlePlus": {
-        "enabled": true,
-        "link": "https://google.com",
-        "aria_label": "Google Plus"
-      }
+  "hello_bar_content": "Nice hello bar",
+  "social_networks": {
+    "facebook": {
+      "enabled": true,
+      "link": "https://facebook.com",
+      "aria_label": "Facebook"
+    },
+    "instagram": {
+      "enabled": true,
+      "link": "https://instagram.com",
+      "aria_label": "Instagram"
+    },
+    "twitter": {
+      "enabled": true,
+      "link": "https://twitter.com",
+      "aria_label": "Twitter"
+    },
+    "pinterest": {
+      "enabled": true,
+      "link": "https://pinterest.com",
+      "aria_label": "Pinterest"
+    },
+    "youtube": {
+      "enabled": true,
+      "link": "https://youtube.com",
+      "aria_label": "Pinterest"
+    },
+    "googlePlus": {
+      "enabled": true,
+      "link": "https://google.com",
+      "aria_label": "Google Plus"
     }
+  }
 }
