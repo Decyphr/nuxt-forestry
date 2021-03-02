@@ -5,11 +5,6 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: heading
-  label: General
-- type: document
-  path: content/data/site-settings.json
-  label: Site Information
-- type: heading
   label: Content
 - type: document
   path: content/homepage.md
@@ -30,6 +25,14 @@ sections:
   new_doc_ext: json
   templates:
   - news
+- type: heading
+  label: Globals
+- type: document
+  path: content/data/site-settings.json
+  label: Site Information
+- type: document
+  path: content/global/headerFooterContent.json
+  label: Header Footer Content
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
