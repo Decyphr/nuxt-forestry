@@ -31,9 +31,8 @@ sections:
   path: content/data/site-settings.json
   label: Site Information
 - type: document
-  path: content/globals/headerFooterContent.json
+  path: content/global/headerFooterContent.json
   label: Header Footer Content
-  match: "**/*"
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
