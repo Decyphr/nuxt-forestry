@@ -31,7 +31,13 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: [
+    '@aceforth/nuxt-optimized-images'
+  ],
+
+  optimizedImages: {
+    optimizedImages: true,
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

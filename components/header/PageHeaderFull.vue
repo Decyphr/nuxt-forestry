@@ -1,7 +1,7 @@
 <template>
   <div class="page-header-full">
     <div class="container">
-      <div><Logo /></div>
+      <nuxt-link to="/"><Logo /></nuxt-link>
       <nav class="header-nav-primary" aria-label="Primary">
         <nav-core />
       </nav>

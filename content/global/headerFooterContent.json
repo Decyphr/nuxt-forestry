@@ -1,0 +1,38 @@
+{
+  "displayHelloBar": false,
+  "helloBarContent": "",
+  "socialNetworks": [
+    {
+      "facebook": {
+        "enabled": true,
+        "link": "https://facebook.com",
+        "ariaLabel": "Facebook"
+      },
+      "instagram": {
+        "enabled": true,
+        "link": "https://instagram.com",
+        "ariaLabel": "Instagram"
+      },
+      "twitter": {
+        "enabled": true,
+        "link": "https://twitter.com",
+        "ariaLabel": "Twitter"
+      },
+      "pinterest": {
+        "enabled": true,
+        "link": "https://pinterest.com",
+        "ariaLabel": "Pinterest"
+      },
+      "youtube": {
+        "enabled": true,
+        "link": "https://youtube.com",
+        "ariaLabel": "Pinterest"
+      },
+      "googlePlus": {
+        "enabled": true,
+        "link": "https://google.com",
+        "ariaLabel": "Google Plus"
+      }
+    }
+  ]
+}
