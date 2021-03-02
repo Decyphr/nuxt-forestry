@@ -9,14 +9,6 @@ sections:
 - type: document
   path: content/data/site-settings.json
   label: Site Information
-- type: directory
-  path: content/global
-  label: Navigation
-  create: documents
-  match: "**/*"
-  new_doc_ext: json
-  templates:
-  - navigation
 - type: heading
   label: Content
 - type: document
