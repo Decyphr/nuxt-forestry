@@ -1,38 +1,37 @@
 {
-  "displayHelloBar": false,
-  "helloBarContent": "",
-  "socialNetworks": [
+  "display_hello_bar": true,
+  "hello_bar_content": "",
+  "social_networks": 
     {
       "facebook": {
         "enabled": true,
         "link": "https://facebook.com",
-        "ariaLabel": "Facebook"
+        "aria_label": "Facebook"
       },
       "instagram": {
         "enabled": true,
         "link": "https://instagram.com",
-        "ariaLabel": "Instagram"
+        "aria_label": "Instagram"
       },
       "twitter": {
         "enabled": true,
         "link": "https://twitter.com",
-        "ariaLabel": "Twitter"
+        "aria_label": "Twitter"
       },
       "pinterest": {
         "enabled": true,
         "link": "https://pinterest.com",
-        "ariaLabel": "Pinterest"
+        "aria_label": "Pinterest"
       },
       "youtube": {
         "enabled": true,
         "link": "https://youtube.com",
-        "ariaLabel": "Pinterest"
+        "aria_label": "Pinterest"
       },
       "googlePlus": {
         "enabled": true,
         "link": "https://google.com",
-        "ariaLabel": "Google Plus"
+        "aria_label": "Google Plus"
       }
     }
-  ]
 }
