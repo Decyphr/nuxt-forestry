@@ -8,7 +8,6 @@
         "link": "https://facebook.com",
         "aria_label": "Facebook"
       },
-<<<<<<< HEAD
       "instagram": {
         "enabled": true,
         "link": "https://instagram.com",
@@ -36,13 +35,3 @@
       }
     }
 }
-=======
-      "instagram": "",
-      "twitter": "",
-      "pinterest": "",
-      "youtube": "",
-      "googlePlus": ""
-    }
-  ]
-}
->>>>>>> 99e2d4a5c61fe30fa090572c1eec383c3d542166
