@@ -6,6 +6,7 @@ hero:
     aria_label: Contact the Weisser team
   excerpt: We help brands of all sizes thrive in the world of ecommerce.
   image: "/images/1280x620.jpg"
+  headline: Expand Your Reach
 callouts:
   pages: content/pages/page-1.json
   headline: Master Any Marketplace
