@@ -18,12 +18,12 @@
       "aria_label": "Twitter"
     },
     "pinterest": {
-      "enabled": true,
+      "enabled": false,
       "link": "https://pinterest.com",
       "aria_label": "Pinterest"
     },
     "youtube": {
-      "enabled": true,
+      "enabled": false,
       "link": "https://youtube.com",
       "aria_label": "Youtube"
     },
