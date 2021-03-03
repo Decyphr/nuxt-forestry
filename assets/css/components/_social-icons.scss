@@ -6,6 +6,7 @@ ul.social-icons {
   li {
     display: inline-block;
     padding: 0px;
+    @include responsive-font(24px, 24px);
     margin: 0 10px 0 0;
 
     &:last-child {
@@ -18,15 +19,15 @@ ul.social-icons {
       color: $white;
       width: 25px;
       height: 25px;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
-      font-size: 14px;
-      padding-top: 4px;
 
-      svg.feather {
-        width: 14px;
-        height: 14px;
-
+      svg {
+        width: 60%;
+        //height: 18px;
+        margin: auto;
       }
 
       &.facebook {
@@ -65,14 +66,25 @@ ul.social-icons {
         }
       }
 
-      &.googleplus {
-        background: #e34120;
+      &.instagram {
+        background: #5851DB;
 
         &:hover,
         &:focus {
-          background: darken(#e34120, 10%);
+          background: darken(#5851DB, 10%);
         }
       }
+
+      &.pinterest {
+        background: #E60023;
+
+        &:hover,
+        &:focus {
+          background: darken(#E60023, 10%);
+        }
+      }
+
+      
     }
 
     

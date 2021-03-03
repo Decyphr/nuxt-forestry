@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import seoData from '~/content/data/site-settings.json';
 
 import NavCore from '~/components/nav/NavCore';
 import SocialIcons from '~/components/SocialIcons';
@@ -35,8 +35,16 @@ export default {
     SocialIcons,
   },
 
+  data: () => ({
+    identity: {
+      address: seoData.identity.address,
+      locality: seoData.identity.locality,
+      region: seoData.identity.region,
+      zipCode: seoData.identity.zip_code,
+    }
+  }),
+
   computed: {
-    ...mapState(['identity']),
     directionsAddress() {
       return (
         this.identity.address +

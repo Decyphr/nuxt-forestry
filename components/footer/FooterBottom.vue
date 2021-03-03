@@ -5,7 +5,7 @@
         <ul>
           <li>
             <span
-              >&copy; Copyright {{ currentYear }} {{ identity.companyName }}</span
+              >&copy; Copyright {{ currentYear }} {{ companyName }}</span
             >
           </li>
           <!--<li v-for="link in globals[1].footerAuxNavigation" :key="link.id"> -->
@@ -28,17 +28,12 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import seoData from '~/content/data/site-settings.json';
 
 export default {
-  data() {
-    return {
-      currentYear: new Date().getFullYear(),
-    };
-  },
-
-  computed: {
-    ...mapState(['identity'])
-  }
+  data: () => ({
+    currentYear: new Date().getFullYear(),
+    companyName: seoData.company
+  }),
 };
 </script>

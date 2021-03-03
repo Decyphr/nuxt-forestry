@@ -25,7 +25,12 @@
     "youtube": {
       "enabled": true,
       "link": "https://youtube.com",
-      "aria_label": "Pinterest"
+      "aria_label": "Youtube"
+    },
+    "linkedIn": {
+      "enabled": true,
+      "link": "https://linkedin.com",
+      "aria_label": "LinkedIn"
     }
   }
 }
