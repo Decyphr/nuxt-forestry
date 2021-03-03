@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <h1>{{ homepage.title }}</h1>
-    <p>{{ homepage.description }}</p>
+    <HomepageHero :hero="homepage.hero" />
   </div>
 </template>
 
 <script>
 export default {
   async asyncData({ $content }) {
-    const homepage = await $content('homepage').fetch();
+    const homepage = await $content('homepage', 'expand-your-reach').fetch();
 
     return { homepage };
   },

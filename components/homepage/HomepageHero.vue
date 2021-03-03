@@ -1,21 +1,28 @@
-{% for entryHero in entry.hero.all() %}
-  {% set heroBackgroundImage = '' %}
-  {% set imageSize = { mode: 'crop', width: 1920, height: 865 } %}
-  {% set heroBackgroundImage = entryHero.heroImage.one.getUrl(imageSize) %}
-
-  <section class="hero" aria-label="Hero" >
-    <div class="hero-background" style="background-image: url('{{ heroBackgroundImage }}');">
-    </div>
+<template>
+  <section class="hero" aria-label="Hero">
+    <div
+      class="hero-background"
+      :style="{ 'background-image': 'url(' + hero.image + ');' }"
+    ></div>
     <div class="hero-container">
       <div class="hero-callout">
-        <h1>{{ entry.title }}</h1>
+        <h1>{{ hero.headline }}</h1>
         <p>
-          {{ entryHero.heroExcerpt }}
+          {{ hero.excerpt }}
         </p>
         <div class="buttons">
-          <a {{ entryHero.heroButton.getLinkAttributes() }} class="btn btn-primary">{{ entryHero.heroButton.getText() }}</a>
+          <nuxt-link to="/page-elements" class="btn btn-primary">{{
+            hero.button_link.custom_link_text
+          }}</nuxt-link>
         </div>
       </div>
     </div>
   </section>
-{% endfor %}
+</template>
+<script>
+export default {
+  props: {
+    hero: { type: Object, required: true },
+  },
+};
+</script>
