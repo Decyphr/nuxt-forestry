@@ -1,6 +1,12 @@
 <template>
-  <section class="hello-bar" aria-label="Important Message">
-    <div class="container">Beautiful HelloBar</div>
+  <section class="hello-bar" :aria-label="content">
+    <div class="container">{{ content }}</div>
   </section>
-  <!-- TODO: Add HelloBar toggle/info to Global settings object in Forestry -->
 </template>
+<script>
+export default {
+  props: {
+    content: { type: String }
+  }
+}
+</script>

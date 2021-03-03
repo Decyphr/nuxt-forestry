@@ -3,9 +3,9 @@
   "description": "Site Meta Description",
   "company": "My Awesome Company",
   "identity": {
-    "streetAddress": "123 Test St",
-    "addressLocality": "Sioux Falls",
-    "addressRegion": "SD",
-    "zipCode": "57104"
+    "street_address": "123 Test St",
+    "address_locality": "Sioux Falls",
+    "address_region": "SD",
+    "zip_code": "57104"
   }
 }

@@ -6,7 +6,6 @@ ul.social-icons {
   li {
     display: inline-block;
     padding: 0px;
-    @include responsive-font(24px, 24px);
     margin: 0 10px 0 0;
 
     &:last-child {
@@ -23,6 +22,12 @@ ul.social-icons {
       border-radius: 50%;
       font-size: 14px;
       padding-top: 4px;
+
+      svg.feather {
+        width: 14px;
+        height: 14px;
+
+      }
 
       &.facebook {
         background: #4e71a8;

@@ -26,11 +26,6 @@
       "enabled": true,
       "link": "https://youtube.com",
       "aria_label": "Pinterest"
-    },
-    "googlePlus": {
-      "enabled": true,
-      "link": "https://google.com",
-      "aria_label": "Google Plus"
     }
   }
 }
