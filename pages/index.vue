@@ -1,6 +1,5 @@
 <template>
-  <div class="container">
-    <h1>{{ homepage.title }}</h1>
+  <div>
     <HomepageHero :hero="homepage.hero" />
   </div>
 </template>
