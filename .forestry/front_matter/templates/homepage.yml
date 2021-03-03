@@ -17,33 +17,18 @@ fields:
       required: true
     label: Excerpt
     description: Excerpt for the hero
-  - name: cta_button
-    type: field_group
-    config: {}
-    fields:
-    - name: cta_link
-      type: text
-      config:
-        required: true
-      label: CTA Link
-    - name: custom_link_text
-      type: text
-      config:
-        required: false
-      label: Custom Link Text
-    - name: aria_label
-      type: text
-      config:
-        required: false
-      label: Aria Label
-    label: CTA Button
-    description: Button link in hero
   - name: image
     type: file
     config:
       maxSize: 64
     label: Image
     description: Background image for the hero.
+  - name: cta_button
+    type: include
+    config: {}
+    template: button-link-field
+    label: CTA Button
+    description: Button link in hero
   label: Hero
 - name: callouts
   type: field_group
@@ -153,4 +138,10 @@ fields:
         format: markdown
     label: Excerpt
     description: Excerpt for the career callout
+  - name: button
+    type: include
+    config: {}
+    template: button-link-field
+    label: Button
+    description: Link to the career page
   label: Career Callout
