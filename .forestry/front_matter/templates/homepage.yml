@@ -1,4 +1,156 @@
 ---
 label: Homepage
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: hero
+  type: field_group
+  config: {}
+  fields:
+  - name: excerpt
+    type: text
+    config:
+      required: true
+    label: Excerpt
+    description: Excerpt for the hero
+  - name: cta_button
+    type: field_group
+    config: {}
+    fields:
+    - name: cta_link
+      type: text
+      config:
+        required: true
+      label: CTA Link
+    - name: custom_link_text
+      type: text
+      config:
+        required: false
+      label: Custom Link Text
+    - name: aria_label
+      type: text
+      config:
+        required: false
+      label: Aria Label
+    label: CTA Button
+    description: Button link in hero
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+    description: Background image for the hero.
+  label: Hero
+- name: callouts
+  type: field_group
+  config: {}
+  fields:
+  - name: headline
+    type: text
+    config:
+      required: false
+    label: Headline
+    description: Headline above the callouts
+  - name: pages
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: pages
+        file: 
+        path: 
+    label: Pages
+    description: Three entries to callout below the hero
+  label: Callouts
+- name: testimonials
+  type: field_group
+  config: {}
+  fields:
+  - name: testimonial_headline
+    type: text
+    config:
+      required: false
+    label: Testimonial Headline
+    description: Headline for the testimonials
+  - name: testimonial
+    type: field_group_list
+    fields:
+    - name: pullquote
+      type: textarea
+      default: ''
+      config:
+        required: true
+        wysiwyg: false
+        schema:
+          format: markdown
+      label: Pullquote
+      description: Quote for the testimonial
+    - name: citation
+      type: text
+      config:
+        required: true
+      label: Citation
+      description: Citation for the pullquote
+    - name: title
+      type: text
+      config:
+        required: false
+      label: Title
+      description: Title of the person who said the pullquote
+    config:
+      min: 
+      max: 
+      labelField: 
+    label: Testimonial
+  label: Testimonials
+- name: news
+  type: field_group
+  config: {}
+  fields:
+  - name: headline
+    type: text
+    config:
+      required: true
+    label: Headline
+  - name: news_articles
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: news
+        file: 
+        path: 
+    label: News Articles
+    description: New Articles to pull into the homepage
+  label: News
+- name: career_callout
+  type: field_group
+  config: {}
+  fields:
+  - name: headline
+    type: text
+    config:
+      required: true
+    label: Headline
+    description: Headline of the career callout
+  - name: excerpt
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Excerpt
+    description: Excerpt for the career callout
+  label: Career Callout
