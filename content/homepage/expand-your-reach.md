@@ -20,7 +20,7 @@ career_callout:
   headline: Join Our Team
   excerpt: Explore a career with one of the region's fastest growing companies. We're
     not slowing down any time soon.
-title: Expand Your Reach
+title: Homepage
 testimonials:
   testimonial_headline: Testimonials
   testimonial:
