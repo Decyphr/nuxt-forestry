@@ -6,9 +6,13 @@ webhook_url:
 sections:
 - type: heading
   label: Content
-- type: document
-  path: content/homepage.md
-  label: Home
+- type: directory
+  path: content/homepage
+  label: Homepage
+  create: documents
+  match: "**/*"
+  templates:
+  - homepage
 - type: directory
   path: content/pages
   label: Pages
