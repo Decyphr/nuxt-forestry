@@ -1,4 +1,31 @@
 ---
 label: Button Link Field
 hide_body: true
-fields: []
+fields:
+- name: button_link
+  type: field_group
+  config: {}
+  fields:
+  - name: link
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: pages
+        file: 
+        path: 
+    label: Link
+  - name: custom_link_text
+    type: text
+    config:
+      required: false
+    label: Custom Link Text
+  - name: aria_label
+    type: text
+    config:
+      required: false
+    label: Aria Label
+  label: Button Link
