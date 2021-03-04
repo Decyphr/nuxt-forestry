@@ -24,7 +24,8 @@ export default {
     {
       src: "~/plugins/headroom.js",
       ssr: true
-    }
+    },
+    '~/plugins/parseRelatedEntry.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

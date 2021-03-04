@@ -1,15 +1,23 @@
 <template>
   <div>
-    <HomepageHero :hero="homepage.hero" />
+    <HomepageHero :hero="homepage.hero" :cta="ctaLink" />
   </div>
 </template>
 
 <script>
+import { parseRelatedEntry } from '~/plugins/parseRelatedEntry';
+
 export default {
   async asyncData({ $content }) {
-    const homepage = await $content('homepage', 'expand-your-reach').fetch();
+    const homepage = await $content('homepage', 'homepage').fetch();
+    let ctaLink;
 
-    return { homepage };
+    if (homepage.hero.button_link.link) {
+      const link = parseRelatedEntry(homepage.hero.button_link.link);
+      ctaLink = await $content(link).fetch();
+    }
+
+    return { homepage, ctaLink };
   },
 };
 </script>

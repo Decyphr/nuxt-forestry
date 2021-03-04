@@ -11,7 +11,7 @@
           {{ hero.excerpt }}
         </p>
         <div class="buttons">
-          <nuxt-link to="/page-elements" class="btn btn-primary">{{
+          <nuxt-link :to="ctaLink" class="btn btn-primary">{{
             hero.button_link.custom_link_text
           }}</nuxt-link>
         </div>
@@ -23,6 +23,14 @@
 export default {
   props: {
     hero: { type: Object, required: true },
+    cta: { type: Object },
+  },
+
+  computed: {
+    ctaLink() {
+      // if the entry is within the 'pages' section exclude that from route
+      return this.cta.path.includes('/pages') ? this.cta.slug : this.cta.path;
+    },
   },
 };
 </script>
