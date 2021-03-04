@@ -45,18 +45,26 @@ fields:
       required: false
     label: Headline
     description: Headline above the callouts
-  - name: pages
-    type: select
-    default: []
+  - name: callout_pages
+    type: field_group_list
+    fields:
+    - name: pages
+      type: select
+      default: []
+      config:
+        required: false
+        options: []
+        source:
+          type: simple
+          section: 
+          file: 
+          path: 
+      label: Pages
     config:
-      required: false
-      options: []
-      source:
-        type: pages
-        section: pages
-        file: 
-        path: 
-    label: Pages
+      min: 1
+      max: 3
+      labelField: pages
+    label: Callout Pages
     description: Three entries to callout below the hero
   label: Callouts
 - name: testimonials
@@ -110,16 +118,24 @@ fields:
       required: true
     label: Headline
   - name: news_articles
-    type: select
-    default: []
+    type: field_group_list
+    fields:
+    - name: article
+      type: select
+      default: []
+      config:
+        required: false
+        options: []
+        source:
+          type: pages
+          section: news
+          file: 
+          path: 
+      label: Article
     config:
-      required: false
-      options: []
-      source:
-        type: pages
-        section: news
-        file: 
-        path: 
+      min: 1
+      max: 3
+      labelField: article
     label: News Articles
     description: New Articles to pull into the homepage
   label: News
