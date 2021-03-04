@@ -20,7 +20,6 @@ sections:
   match: "**/*"
   new_doc_ext: json
   templates:
-  - homepage
   - general-page-fields
 - type: directory
   path: content/news
