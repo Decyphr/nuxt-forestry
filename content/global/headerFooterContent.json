@@ -1,5 +1,5 @@
 {
-  "display_hello_bar": true,
+  "display_hello_bar": false,
   "hello_bar_content": "Nice hello bar",
   "social_networks": {
     "facebook": {
