@@ -166,5 +166,3 @@ fields:
     label: Button
     description: Link to the career page
   label: Career Callout
-pages:
-- content/homepage/expand-your-reach.md
