@@ -3,7 +3,7 @@
   "hello_bar_content": "Nice hello bar",
   "primary_navigation": [
     {
-      "front_matter": "navigation"
+      "entry": "content/pages/page-1.json"
     }
   ],
   "social_networks": {
