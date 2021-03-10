@@ -6,7 +6,7 @@
       <div class="callouts">
         <div
           v-for="callout in calloutPages"
-          :key="callout.id"
+          :key="callout.slug"
           class="callout-column"
         >
           <article class="callout" :aria-label="callout.title">
@@ -14,11 +14,11 @@
             <p>
               {{ callout.excerpt }}
             </p>
-            <a
-              :href="callout.url"
+            <nuxt-link
+              :to="`/${callout.slug}`"
               class="btn btn-secondary"
               :aria-label="`Learn More about ${callout.title}`"
-              >Learn More</a
+              >Learn More</nuxt-link
             >
           </article>
         </div>

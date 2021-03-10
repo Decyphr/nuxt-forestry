@@ -1,6 +1,11 @@
 {
   "display_hello_bar": false,
   "hello_bar_content": "Nice hello bar",
+  "primary_navigation": [
+    {
+      "entry": "content/pages"
+    }
+  ],
   "social_networks": {
     "facebook": {
       "enabled": true,
