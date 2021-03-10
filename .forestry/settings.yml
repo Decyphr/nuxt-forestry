@@ -37,15 +37,6 @@ sections:
 - type: document
   path: content/global/headerFooterContent.json
   label: Header Footer Content
-- type: directory
-  path: content/global
-  label: Navigation
-  create: documents
-  match: "**/*"
-  exclude: headerFooterContent.json
-  new_doc_ext: json
-  templates:
-  - navigation
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
