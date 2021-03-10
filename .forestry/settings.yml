@@ -18,7 +18,7 @@ sections:
   label: Pages
   create: documents
   match: "**/*"
-  new_doc_ext: ''
+  new_doc_ext: app
   templates:
   - general-page-fields
 - type: directory
@@ -26,7 +26,7 @@ sections:
   label: News
   create: documents
   match: "**/*"
-  new_doc_ext: ''
+  new_doc_ext: app
   templates:
   - news
 - type: heading
@@ -37,6 +37,14 @@ sections:
 - type: document
   path: content/global/headerFooterContent.json
   label: Header Footer Content
+- type: directory
+  path: content/global
+  label: Navigation
+  create: documents
+  match: "**/*"
+  exclude: headerFooterContent.json
+  templates:
+  - navigation
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
