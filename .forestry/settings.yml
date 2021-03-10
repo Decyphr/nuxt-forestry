@@ -43,6 +43,7 @@ sections:
   create: documents
   match: "**/*"
   exclude: headerFooterContent.json
+  new_doc_ext: ".json"
   templates:
   - navigation
 upload_dir: static/images
