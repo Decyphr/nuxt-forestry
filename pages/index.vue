@@ -2,6 +2,7 @@
   <div>
     <HomepageHero :hero="homepage.hero" :cta="ctaLink" />
     <HomepageCallouts :headline="homepage.callouts.headline" :calloutPages="calloutPages" />
+    <HomepageTestimonials :testimonials="homepage.testimonials" />
   </div>
 </template>
 
