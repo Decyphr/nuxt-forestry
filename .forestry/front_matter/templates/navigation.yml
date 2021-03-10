@@ -17,3 +17,5 @@ fields:
       type: pages
       section: pages
   label: Navigation
+pages:
+- content/global/primary-navigation.md
